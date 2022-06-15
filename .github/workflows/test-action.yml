@@ -10,10 +10,17 @@ on:
         options:
           - a
           - b
-          - c
 
 jobs:
-  test-job:
+  test-job-a:
+    if: ${{ inputs.blockchain-network == a }}
+    runs-on: ubuntu-20.04
+    steps:
+      - name: hello
+        run: echo ${{ inputs.blockchain-network }}
+
+  test-job-b:
+    if: ${{ inputs.blockchain-network == b }}
     runs-on: ubuntu-20.04
     steps:
       - name: hello
