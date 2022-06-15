@@ -1,9 +1,16 @@
 name: "Test action"
 
 on:
-  push:
-    branches:
-      - master
+  workflow_dispatch:
+    inputs:
+      blockchain-network: 'blockchain-network'
+      required: true
+      type: choice
+      options:
+        - a
+        - b
+        - c
+
 
 jobs:
   test-job:
