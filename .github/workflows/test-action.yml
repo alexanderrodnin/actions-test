@@ -3,14 +3,14 @@ name: "Test action"
 on:
   workflow_dispatch:
     inputs:
-      blockchain-network: 'blockchain-network'
-      required: true
-      type: choice
-      options:
-        - a
-        - b
-        - c
-
+      blockchain-network:
+        description: 'blockchain-network'
+        required: true
+        type: choice
+        options:
+          - a
+          - b
+          - c
 
 jobs:
   test-job:
