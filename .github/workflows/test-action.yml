@@ -1,0 +1,13 @@
+name: "Test action"
+
+on:
+  push:
+    branches:
+      - master
+
+jobs:
+  test-job:
+    runs-on: ubuntu-20.04
+    steps:
+      - name: hello
+        run: echo hello
