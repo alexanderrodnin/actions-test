@@ -7,7 +7,7 @@ on:
 
 jobs:
   say-hi:
-    runs-on: ubuntu-22.04
+    runs-on: self-hosted
     steps:
       - run: echo "Hi!"
 
