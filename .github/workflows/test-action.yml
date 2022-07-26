@@ -6,10 +6,16 @@ on:
       - master
 
 jobs:
-  say-hi:
+  say-hi-mac-m1:
     runs-on: self-hosted
     steps:
-      - run: echo "Hi!"
+      - run: echo "Hello from mac m1"
+
+  say-hi-ubuntu:
+    runs-on: self-hosted
+    steps:
+      - run: echo "Hello from ubuntu"
+
 
 #on:
 #  workflow_dispatch:
