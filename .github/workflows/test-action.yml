@@ -1,27 +1,38 @@
-name: "Test action"
+name: "run always"
 
 on:
-  workflow_dispatch:
-    inputs:
-      blockchain-network:
-        description: 'blockchain-network'
-        required: true
-        type: choice
-        options:
-          - a
-          - b
+  push:
+    branches:
+      - master
 
 jobs:
-  test-job-a:
-    if: ${{ inputs.blockchain-network == 'a' }}
-    runs-on: ubuntu-20.04
+  say-hi:
+    runs-on: ubuntu-22.04
     steps:
-      - name: hello
-        run: echo ${{ inputs.blockchain-network }}
+      - run: echo "Hi!"
 
-  test-job-b:
-    if: ${{ inputs.blockchain-network == 'b' }}
-    runs-on: ubuntu-20.04
-    steps:
-      - name: hello
-        run: echo ${{ inputs.blockchain-network }}
+#on:
+#  workflow_dispatch:
+#    inputs:
+#      blockchain-network:
+#        description: 'blockchain-network'
+#        required: true
+#        type: choice
+#        options:
+#          - a
+#          - b
+#
+#jobs:
+#  test-job-a:
+#    if: ${{ inputs.blockchain-network == 'a' }}
+#    runs-on: ubuntu-20.04
+#    steps:
+#      - name: hello
+#        run: echo ${{ inputs.blockchain-network }}
+#
+#  test-job-b:
+#    if: ${{ inputs.blockchain-network == 'b' }}
+#    runs-on: ubuntu-20.04
+#    steps:
+#      - name: hello
+#        run: echo ${{ inputs.blockchain-network }}
