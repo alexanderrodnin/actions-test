@@ -12,7 +12,7 @@ jobs:
       matrix:
         os: [macos-latest, ubuntu-18.04]
     steps:
-      - run: echo "Hello from mac m1"
+      - run: echo "Hello from ${{ matrix.os }"
 
 
 #qweqwe
