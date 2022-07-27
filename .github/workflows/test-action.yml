@@ -7,7 +7,10 @@ on:
 
 jobs:
   say-hi-ubuntu:
-    runs-on: [ubuntu-22.04, ubuntu-20.04]
+    runs-on: ${{ matrix.os }}
+    strategy:
+      matrix:
+        os: [macos-latest, ubuntu-18.04]
     steps:
       - run: echo "Hello from mac m1"
 
