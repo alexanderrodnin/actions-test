@@ -6,7 +6,7 @@ jobs:
   say-hi:
     runs-on: ubuntu-22.04
     steps:
-      - run: echo "Hello from ubuntu-22.04"
+      - run: echo "Hello from ${{ env.RUNNER_OS }}"
 
 
 
