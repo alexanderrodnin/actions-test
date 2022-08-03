@@ -1,21 +1,33 @@
 name: "run always"
 
-on:
-  push:
-    branches:
-      - master
+on: push
 
 jobs:
-  say-hi-ubuntu:
-    runs-on: ${{ matrix.os }}
-    strategy:
-      matrix:
-        os: [macos-latest, ubuntu-18.04]
+  say-hi:
+    runs-on: ubuntu-22.04
     steps:
-      - run: echo "Hello from ${{ matrix.os }}"
+      - run: echo "Hello from ubuntu-22.04"
 
 
-#qweqwe
+
+# -------
+# 1
+#on:
+#  push:
+#    branches:
+#      - master
+#
+#jobs:
+#  say-hi-ubuntu:
+#    runs-on: ${{ matrix.os }}
+#    strategy:
+#      matrix:
+#        os: [macos-latest, ubuntu-18.04]
+#    steps:
+#      - run: echo "Hello from ${{ matrix.os }}"
+
+
+# 2
 #on:
 #  workflow_dispatch:
 #    inputs:
