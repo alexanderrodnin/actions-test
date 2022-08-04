@@ -5,7 +5,7 @@ on: push
 jobs:
   condition-test-1:
 #    if: ${{ 'alexanderrodnin' == 'alexanderrodnin' }}
-    runs-on: ${{ 'alexanderrodnin' == 'alexanderrodnin' && 'ubuntu-22.04' || 'ubuntu-20.04' }}
+    runs-on: ${{ 'alexanderrodnin' == 'alexanderrodnin' && 'ubuntu-22.04' || 'macos-11' }}
     steps:
       - run: echo "$RUNNER_ARCH"
       - run: echo "$RUNNER_OS"
