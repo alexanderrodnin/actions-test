@@ -13,17 +13,7 @@ on: push
 
 jobs:
   select-env:
-    runs-on: ubuntu-22.04
-    steps:
-      - run: |
-          if [[ "$GITHUB_REPOSITORY_OWNER" == "alexanderrodnin" ]]
-          then
-            echo "SELECTED_RUNNER=ubuntu-22.04" >> $GITHUB_ENV
-          else
-            echo "SELECTED_RUNNER=ubuntu-20.04" >> $GITHUB_ENV
-          fi;
-  say-hi:
-    runs-on: ubuntu-22.04
+    runs-on: [ubuntu-22.04, ubuntu-20.04]
     steps:
       - run: echo "${{ env.SELECTED_RUNNER }}"
       - run: echo "$CI"
