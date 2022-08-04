@@ -25,7 +25,7 @@ jobs:
   say-hi:
     runs-on: ubuntu-22.04
     steps:
-      - run: echo "$SELECTED_RUNNER"
+      - run: echo "$env.SELECTED_RUNNER"
       - run: echo "$CI"
       - run: echo "$GITHUB_ACTION"
       - run: echo "$GITHUB_ACTION_PATH"
