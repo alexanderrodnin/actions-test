@@ -4,7 +4,7 @@ on: push
 
 jobs:
   condition-test-1:
-    if: ${{ 'hui' == 'alexanderrodnin' }}
+    if: ${{ 'alexanderrodnin' == 'alexanderrodnin' }}
     runs-on: ubuntu-22.04
     steps:
       - run: echo "$RUNNER_ARCH"
