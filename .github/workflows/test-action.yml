@@ -4,7 +4,7 @@ on: push
 
 jobs:
   select-env:
-    runs-on: ${{ "hui" == "alexanderrodnin"  && "ubuntu-22.04" || "ubuntu-20.04" }}
+    runs-on: '${{ "hui" == "alexanderrodnin"  && "ubuntu-22.04" || "ubuntu-20.04" }}'
     steps:
       - run: echo "$RUNNER_ARCH"
       - run: echo "$RUNNER_OS"
