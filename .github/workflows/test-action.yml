@@ -9,7 +9,7 @@ jobs:
         runs-on:
           - ${{ '$GITHUB_ACTOR' == 'alexanderrodnin' && 'ubuntu-22.04' || 'macos-11' }}
           - ${{ '$GITHUB_ACTOR' == 'alexanderrodnin' && 'macos-11' || 'ubuntu-22.04' }}
-    runs-on:
+    runs-on: ${{ matrix.runs-on }}
     steps:
       - run: echo "$RUNNER_ARCH"
       - run: echo "$RUNNER_OS"
