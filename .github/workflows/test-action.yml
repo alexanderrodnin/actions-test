@@ -23,7 +23,7 @@ jobs:
             echo "SELECTED_RUNNER=ubuntu-20.04" >> $GITHUB_ENV
           fi;
   say-hi:
-    runs-on: ${{ env.SELECTED_RUNNER }}
+    runs-on: $SELECTED_RUNNER
     steps:
       - run: echo "$CI"
       - run: echo "$GITHUB_ACTION"
