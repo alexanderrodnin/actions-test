@@ -4,7 +4,12 @@ on: push
 
 jobs:
   condition-test-1:
-    runs-on: ${{ '$GITHUB_ACTOR' == 'alexanderrodnin' && 'ubuntu-22.04' || 'macos-11' }}
+    strategy:
+      matrix:
+        runs-on:
+          - ${{ '$GITHUB_ACTOR' == 'alexanderrodnin' && 'ubuntu-22.04' || 'macos-11' }}
+          - ${{ '$GITHUB_ACTOR' == 'alexanderrodnin' && 'macos-11' || 'ubuntu-22.04' }}
+    runs-on:
     steps:
       - run: echo "$RUNNER_ARCH"
       - run: echo "$RUNNER_OS"
