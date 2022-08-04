@@ -4,12 +4,14 @@ on: push
 
 jobs:
   condition-test-1:
-    runs-on: '${{ "hui" == "alexanderrodnin"  && "ubuntu-22.04" || "ubuntu-20.04" }}'
+    if: ${{ "hui" == "alexanderrodnin"  && "ubuntu-22.04" || "ubuntu-20.04" }}
+    runs-on: ubuntu-22.04
     steps:
       - run: echo "$RUNNER_ARCH"
       - run: echo "$RUNNER_OS"
   condition-test-2:
-    runs-on: '${{ "alexanderrodnin" == "alexanderrodnin"  && "ubuntu-22.04" || "ubuntu-20.04" }}'
+    if: ${{ "alexanderrodnin" == "alexanderrodnin"  && "ubuntu-22.04" || "ubuntu-20.04" }}
+    runs-on: ubuntu-22.04
     steps:
       - run: echo "$RUNNER_ARCH"
       - run: echo "$RUNNER_OS"
