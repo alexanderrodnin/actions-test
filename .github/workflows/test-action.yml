@@ -2,7 +2,26 @@ name: "run always"
 
 on: push
 
+  #          echo
+  #          alexanderrodnin
+  #        $GITHUB_REPOSITORY_OWNER
+
+  #                  SPEC_VERSION=$(sed -nr 's/.*spec_version: ([0-9]+),/\1/p' crates/subspace-runtime/src/lib.rs)
+  #          docker run --rm -u root ${{ steps.build.outputs.digest }} > subspace_runtime-$SPEC_VERSION.compact.compressed.wasm
+#          echo "SPEC_VERSION=$SPEC_VERSION" >> $GITHUB_ENV
+
+
 jobs:
+  select-env:
+    runs-on: ubuntu-22.04
+    steps:
+      - run: |
+          if [[ "$GITHUB_REPOSITORY_OWNER" == "alexanderrodnin" ]]
+          then
+            echo "yes"
+          else
+            echo "no"
+          fi;
   say-hi:
     runs-on: ubuntu-22.04
     steps:
