@@ -16,14 +16,14 @@ jobs:
     runs-on: ubuntu-22.04
     steps:
       - run: |
-          if [[ "$GITHUB_REPOSITORY_OWNER" == "alexanderrodnin-1111" ]]
+          if [[ "$GITHUB_REPOSITORY_OWNER" == "alexanderrodnin" ]]
           then
-            echo "yes"
+            echo "SELECTED_RUNNER=ubuntu-22.04" >> $GITHUB_ENV
           else
-            echo "no"
+            echo "SELECTED_RUNNER=ubuntu-20.04" >> $GITHUB_ENV
           fi;
   say-hi:
-    runs-on: ubuntu-22.04
+    runs-on: ${{ env.SELECTED_RUNNER }}
     steps:
       - run: echo "$CI"
       - run: echo "$GITHUB_ACTION"
