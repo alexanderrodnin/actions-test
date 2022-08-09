@@ -10,6 +10,6 @@ jobs:
           - ${{ github.github.repository_owner == 'alexanderrodnin' && 'ubuntu-22.04' || 'macos-11' }}
     runs-on: ${{ matrix.runs-on }}
     steps:
-      - run: echo "${{ github.github.repository_owner }}"
+      - run: echo "$github.github.repository_owner"
       - run: echo "$RUNNER_ARCH"
       - run: echo "$RUNNER_OS"
