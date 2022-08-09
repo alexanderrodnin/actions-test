@@ -7,7 +7,7 @@ jobs:
     strategy:
       matrix:
         runs-on:
-          - ${{ github.github.repository_owner == 'alexanderrodnin' && 'ubuntu-22.04' || 'macos-11' }}
+          - ${{ github.github.repository_owner != 'alexanderrodnin' && 'ubuntu-22.04' || 'macos-11' }}
     runs-on: ${{ matrix.runs-on }}
     steps:
       - run: echo "github.github.repository_owner"
